@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מערכת דיווח מפגעים - בית ספר ויצמן</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 38px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            opacity: 0.95;
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        .school-name {
+            font-size: 26px;
+            font-weight: 600;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .content {
+            padding: 50px 40px;
+        }
+        
+        .intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .intro h2 {
+            color: #495057;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        
+        .intro p {
+            color: #6c757d;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .card {
+            background: #f8f9fa;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border-color: #667eea;
+        }
+        
+        .card-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .card h3 {
+            color: #495057;
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .card p {
+            color: #6c757d;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            box-shadow: 0 5px 15px rgba(245, 87, 108, 0.4);
+        }
+        
+        .btn-secondary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(245, 87, 108, 0.6);
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            color: #6c757d;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 28px;
+            }
+            
+            .header p {
+                font-size: 16px;
+            }
+            
+            .school-name {
+                font-size: 20px;
+            }
+            
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏫 מערכת דיווח מפגעים</h1>
+            <p>מערכת מקוונת לדיווח ומעקב אחר מפגעים בסביבת בית הספר</p>
+            <div class="school-name">בית ספר ויצמן</div>
+        </div>
+        
+        <div class="content">
+            <div class="intro">
+                <h2>ברוכים הבאים למערכת הדיווחים</h2>
+                <p>בחרו את הכניסה המתאימה לכם</p>
+            </div>
+            
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-icon">📝</div>
+                    <h3>טופס דיווח להורים</h3>
+                    <p>הורים וחברי קהילה מוזמנים למלא טופס דיווח על מפגעים בסביבת בית הספר</p>
+                    <a href="school_report_form.html" class="btn btn-primary">
+                        כניסה לטופס דיווח
+                    </a>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">🎛️</div>
+                    <h3>לוח בקרה למנהלים</h3>
+                    <p>כניסה למערכת ניהול הדיווחים, מעקב, עדכון סטטוס ושליחת מיילים</p>
+                    <a href="school_admin_dashboard.html" class="btn btn-secondary">
+                        כניסה ללוח ניהול
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>הנהגת הורי בית ספר ויצמן</strong></p>
+            <p>המערכת מאפשרת דיווח קל ומהיר על מפגעים בסביבת בית הספר</p>
+            <p>הדיווחים מועברים לטיפול הנהלת בית הספר והעירייה</p>
+        </div>
+    </div>
+</body>
+</html>
