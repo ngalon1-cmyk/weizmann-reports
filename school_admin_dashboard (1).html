@@ -549,6 +549,14 @@
             return false;
         }
         
+        if (!checkPassword()) {
+            document.body.innerHTML = '<div style="text-align:center; padding:50px; font-family:Arial;">גישה נדחתה</div>';
+        }
+        
+        let allReports = [];
+        let filteredReports = [];
+        }
+        
         // Check password on page load
         if (!checkPassword()) {
             document.body.innerHTML = '<div style="text-align:center; padding:50px; font-family:Arial;">גישה נדחתה</div>';
